@@ -77,7 +77,8 @@ export default class MakeNote extends React.Component {
 
     errorClass(error) {
         return(
-            error.length === 0 ? "" : "has-error" 
+            error.length === 0 ? "" : "is-invalid" 
+            
         );
     }
 
@@ -115,7 +116,6 @@ export default class MakeNote extends React.Component {
                
                 <div 
                     className="my-3"
-                    className={`form-group ${this.errorClass(this.state.formErrors.title)}`}
                 >
                     <label htmlFor="title" className="form-label">
                         Title
@@ -123,7 +123,7 @@ export default class MakeNote extends React.Component {
                     <input
                         type="text"
                         id="title"
-                        className="form-control"
+                        className={`form-control ${this.errorClass(this.state.formErrors.title)}`}
                         value={this.state.title}
                         onChange={(event) => {
                             this.handleTitleChange(event);
@@ -131,7 +131,7 @@ export default class MakeNote extends React.Component {
                         required
                     />
                     <div class="invalid-feedback">
-                        Please choose a username.
+                        Title of the note cannot be empty.
                     </div>
                 </div>
                 <div className="my-3">
@@ -140,7 +140,7 @@ export default class MakeNote extends React.Component {
                     </label>
                     <textarea
                         id="body"
-                        className="form-control"
+                        className={`form-control ${this.errorClass(this.state.formErrors.body)}`}
                         value={this.state.body}
                         onChange={(event) => {
                             this.handleBodyChange(event);
@@ -148,6 +148,9 @@ export default class MakeNote extends React.Component {
                     >
 
                     </textarea>
+                    <div class="invalid-feedback">
+                        Body of the note cannot be empty.
+                    </div>
                 </div>
                 
                 <div className="my-3">
@@ -167,11 +170,11 @@ export default class MakeNote extends React.Component {
                     />
                 </div>
                 
-                <div className="error-message">
+                {/* <div className="error-message">
                     <div className="panel panel-default">
                         <FormErrors formErrors={this.state.formErrors} />
                     </div>
-                </div>
+                </div> */}
 
                 <button 
                     type="submit" 

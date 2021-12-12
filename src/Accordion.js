@@ -13,59 +13,6 @@ export default class Accordion extends React.Component {
         };
     }
 
-    // updateModal(id) {
-    //     console.log(`modal for ${id}` );
-    //     fetch(`https://final-proj-app.herokuapp.com/api/notes/${id}`, {
-    //     method: "PUT",
-    //     body: JSON.stringify({
-    //         // request body that is sent to the api
-    //         isModalOpen: this.state.isModalOpen
-
-    //     }),
-    //     headers: {
-    //         "Content-type": "application/json; charset=UTF-8"
-    //     }
-    //     }).then((response) => {
-    //         return response.json();
-    //     });
-    //     //return true;
-    // }
-
-    // updateExpanded(notesId, isExpanded) {
-    //     // isExpanded ? (
-    //     //     {this.setState( {
-    //     //         expanded: false
-    //     //     })}
-    //     // ) : (
-    //     //     {this.setState( {
-    //     //         expanded: true
-    //     //     }) }
-    //     // )
-    //     console.log("in updateExpanded()");
-    //     this.setState({
-    //         expanded: isExpanded ?  false :  true
-    //     })
-    //     console.log(this.state);
-
-    //     fetch(`https://final-proj-app.herokuapp.com/api/notes/${notesId}`, {
-    //     method: "PUT",
-    //     body: JSON.stringify({
-    //         // request body that is sent to the api
-    //         expanded: this.state.expanded
-    //     }),
-    //     headers: {
-    //         "Content-type": "application/json; charset=UTF-8"
-    //     }
-    //     }).then((response) => {
-    //         return response.json();
-    //     });
-    //     //return true;
-    // }
-
-    doNothing() {
-        // literally doing nothing
-    }
-
 
   render() {
     let expanded = this.props.expanded;
@@ -88,7 +35,6 @@ export default class Accordion extends React.Component {
             }}
           >
             {this.props.topic}
-            {/* {this.props.expanded ? <> - </> : <>+</>} */}
           </button>
         </h2>
         <div

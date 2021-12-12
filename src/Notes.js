@@ -25,39 +25,6 @@ export default class Notes extends React.Component {
     }
 
 
-    // updateNotesExpanded(notesId, isExpanded) {
-    // //     console.log(this.state.expanded);
-    // //     const id = notesId;
-    // //     fetch(`https://final-proj-app.herokuapp.com/api/notes${id}`, {
-    // //         method: "PUT",
-    // //         body: JSON.stringify({
-    // //             expanded: this.state.expanded
-    // //         }).then((response) => {
-    // //             return response.json();
-    // //         }).then((json) => {
-    // //             console.log(json);
-    // //         })
-    // //     })
-    //     console.log("in updateExpanded()");
-    //     this.setState({
-    //         expanded: isExpanded ?  false :  true
-    //     })
-    //     console.log(this.state);
-
-    //     fetch(`https://final-proj-app.herokuapp.com/api/notes/${notesId}`, {
-    //     method: "PUT",
-    //     body: JSON.stringify({
-    //         // request body that is sent to the api
-    //         expanded: this.state.expanded
-    //     }),
-    //     headers: {
-    //         "Content-type": "application/json; charset=UTF-8"
-    //     }
-    //     }).then((response) => {
-    //         return response.json();
-    //     });
-    // }
-
     render() {
         return (
             <>

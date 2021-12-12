@@ -22,11 +22,11 @@ export default class App extends React.Component {
 
           <Switch>   
 
-            <Route path="/notes/new" component={MakeNote} />
-            <Route path="/notes/:notesid/edit" component={EditNote} />
-            <Route path="/notes/:notesid" component={Note} />
+            <Route exact path="/notes/new" component={MakeNote} />
+            <Route exact path="/notes/:notesid/edit" component={EditNote} />
+            <Route exact path="/notes/:notesid" component={Note} />
 
-            <Route path="/pinned">
+            <Route exact path="/pinned">
               <Pinned /> 
             </Route>
             
