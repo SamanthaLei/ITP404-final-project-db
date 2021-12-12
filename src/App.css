@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: thistle;
+}
+
+.modal {
+  display: block !important;
 }
 
 .App-logo {
@@ -28,6 +35,22 @@
   color: #61dafb;
 }
 
+.page-title {
+  margin-top: 20px;
+  color: rgb(63, 61, 61);
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.navigation-bar {
+  margin-bottom: 10px;
+  border-bottom: 5px black;
+}
+
+.nav-link {
+  color: #2f233b;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +58,83 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.btn {
+  margin: 5px;
+}
+
+.btn-group {
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+.rounded-corner-container {
+  border-radius: 20px;
+  border-width: 5px;
+  border-color: #242321;
+  border-style: solid;
+  background: #fcfbf6;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.rounded-corner-title {
+  border-radius: 15px;
+  background: #fddf5a;
+  padding: 20px;
+}
+
+.note-body {
+  margin: 25px;
+}
+
+.accordion-header {
+  background-color: #f1edd4;
+  margin-right: 40px;
+}
+
+html,
+#root {
+  background-color: thistle;
+}
+
+.navigation-bar {
+  background-color: #f1edd4;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 50%;
+}
+
+form {
+  background-color: #ecead7;
+  padding: 20px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.container {
+  background-color: whitesmoke;
+  border-radius: 25px;
+  padding-bottom: 20px;
+}
+
+.no-match {
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 50%;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.formErrors {
+  border-style: dotted black;
 }

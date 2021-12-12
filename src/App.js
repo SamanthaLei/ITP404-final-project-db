@@ -1,25 +1,59 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Navigation from "./Navigation";
+import Notes from "./Notes";
+import MakeNote from './MakeNote';
+import EditNote from './EditNote';
+import Note from './Note';
+import Pinned from "./Pinned";
+import NoMatch from "./NoMatch";
+
+export default class App extends React.Component {
+  render() {
+    return (
+    <Router>
+        <div className="container">
+          <h1 className="page-title">Notes</h1>
+          <Navigation/>
+
+          <Switch>   
+
+            <Route path="/notes/new" component={MakeNote} />
+            <Route path="/notes/:notesid/edit" component={EditNote} />
+            <Route path="/notes/:notesid" component={Note} />
+
+            <Route path="/pinned">
+              <Pinned /> 
+            </Route>
+            
+            <Route exact path="/">
+              <Notes />
+            </Route>
+
+            <Route path="*">
+              <NoMatch />
+            </Route>
+            
+            
+            
+
+          </Switch>
+        </div>
+        <ToastContainer 
+          position="top-right"
+          autoClose={5000}
+          newestOnTop={false}
+          closeOnClick
+          draggable
+          pauseOnHover/>
+      </Router>
+    );
+
+  }
+  
 }
 
-export default App;
