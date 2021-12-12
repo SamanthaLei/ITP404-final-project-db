@@ -72,6 +72,13 @@ export default class EditNote extends React.Component {
         });
     }
 
+    errorClass(error) {
+        return(
+            error.length === 0 ? "" : "is-invalid" 
+            
+        );
+    }
+
     handleSubmit(event) {
         event.preventDefault();
 
@@ -121,26 +128,36 @@ export default class EditNote extends React.Component {
                     <input 
                         type="title"
                         id="title"
-                        className="form-control"
+                        className={`form-control ${this.errorClass(this.state.formErrors.title)}`}
                         value={this.state.title}
                         onChange={(event) => {
                             this.handleTitleChange(event);
                         }}
+                        required
                     />
+                    <div class="invalid-feedback">
+                        Title of the note cannot be empty.
+                    </div>
                 </div>
+                
+
                 <div className="my-3">
                     <label htmlFor="body" className="form-label">
                         Body
                     </label>
                     <textarea
                         id="body"
-                        className="form-control"
+                        className={`form-control ${this.errorClass(this.state.formErrors.body)}`}
                         value={this.state.body}
                         onChange={(event) => {
                             this.handleBodyChange(event);
                         }}
                     >
                     </textarea>
+                    <div class="invalid-feedback">
+                        Body of the note cannot be empty.
+                    </div>
+
                 </div>
 
                 <div className="my-3">
@@ -158,11 +175,11 @@ export default class EditNote extends React.Component {
                     />
                 </div>
 
-                 <div className="error-message">
+                 {/* <div className="error-message">
                     <div className="panel panel-default">
                         <FormErrors formErrors={this.state.formErrors} />
                     </div>
-                </div>
+                </div> */}
 
                 <button type="submit" className="btn btn-primary">
                     Edit Note
